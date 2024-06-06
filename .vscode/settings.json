@@ -1,0 +1,10 @@
+{
+  "editor.codeActionsOnSave": {
+    // 当每次保存代码的时候，修复所有可被自动修复的 eslint 错误
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit",
+ },
+ "eslint.run": "onSave",
+ "eslint.format.enable": true,
+ "editor.formatOnSave": true,
+}
