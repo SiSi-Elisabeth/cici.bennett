@@ -1,8 +1,7 @@
-// import dotenv from 'dotenv';
-// dotenv.config();
-// //process.env是根据目录识别的
-// console.log(process.env.PORT)
+import dotenv from 'dotenv';
+dotenv.config();
+// require('dotenv').config();
 
-export default {
-  port: 3000,
-}
+console.log('process.env.PORT222',process.env.PORT)
+
+export default process.env;
