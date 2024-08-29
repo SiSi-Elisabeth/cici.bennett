@@ -2,16 +2,16 @@ import dotenv from 'dotenv';
 import Koa from 'koa';
 import bodyparser from 'koa-bodyparser';
 import { context } from './extend';
-import { get } from './route/user';
+import { routes } from './route';
 
 dotenv.config();
 
 
 const app = new Koa();
 
-app.use(context);//扩充ctx;
-app.use(bodyparser());
-app.use(get);
+app.use(context); //扩充ctx;
+app.use(bodyparser()); //解析body
+app.use(routes); //路由
 app.use(context => {
   context.body = context;
 })

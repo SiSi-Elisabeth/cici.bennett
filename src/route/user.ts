@@ -1,19 +1,53 @@
 import Router from '@koa/router';
-
-
-const router = new Router();
+const router = new Router({'prefix':'/user'});
 
 router.get('/users',async (ctx)=>{
   const data = {
-    msg: '查询成功！',
+    msg: 'users get success',
     list: [
       {
         busniess:'MGR',
-        name: 'CICI',
+        name: 'sisi',
         version: 0,
         in: false,
       }
     ]
+  }
+  ctx.body = data;
+})
+
+router.get('/api/data', async(ctx)=>{
+  const data = {
+    msg:'get success',
+    value: 'sisi',
+    name: 'get'
+  }
+  ctx.body = data;
+})
+
+router.post('/api/data', async(ctx)=>{
+  const data = {
+    msg: 'post success',
+    value: 'sisi',
+    name: 'post'
+  }
+  ctx.body = data;
+})
+
+router.put('/api/data', async(ctx)=>{
+  const data = {
+    msg: 'put success',
+    value: 'sisi',
+    name: 'put'
+  }
+  ctx.body = data;
+})
+
+router.delete('/api/data', async(ctx)=>{
+  const data = {
+    msg: 'delete success',
+    value: 'sisi',
+    name: 'delete'
   }
   ctx.body = data;
 })
