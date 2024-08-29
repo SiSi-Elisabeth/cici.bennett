@@ -1,10 +1,19 @@
 import Koa from 'koa';
-const app = new Koa()
+import bodyparser from 'koa-bodyparser';
+import { context } from './extend';
+import { get } from './route/user';
+const app = new Koa();
 
-app.use(ctx => {
-  ctx.body = 'hello koa';
+app.use(context);//扩充ctx;
+app.use(bodyparser());
+app.use(get);
+app.use(context => {
+  context.body = context;
 })
-app.listen(3000,() => {
 
+// Router.get('')
+app.listen(3000,() => {
+  // console.info('\x1b[31m%s\x1b[0m','server success, port: 3000');
+  console.log('server success, http://127.0.0.1:3000');
 })
 
