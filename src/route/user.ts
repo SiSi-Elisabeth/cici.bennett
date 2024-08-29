@@ -1,6 +1,11 @@
 import Router from '@koa/router';
 const router = new Router({'prefix':'/user'});
 
+import service from '../controller/user';
+
+router.get('/register', service.register)
+router.get('/login', service.login)
+
 router.get('/users',async (ctx)=>{
   const data = {
     msg: 'users get success',
