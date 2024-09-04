@@ -1,22 +1,23 @@
 import Router from '@koa/router';
 const router = new Router({'prefix':'/user'});
 
-import service from '../controller/user';
+import service from '../service/user';
 
 router.get('/register', service.register)
 router.get('/login', service.login)
 
 router.get('/users',async (ctx)=>{
   const data = {
-    msg: 'users get success',
-    list: [
-      {
+    code: 200,
+    message: 'users get success',
+    data: {
+      user: {
         busniess:'MGR',
         name: 'sisi',
         version: 0,
         in: false,
       }
-    ]
+    }
   }
   ctx.body = data;
 })
