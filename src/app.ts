@@ -20,6 +20,8 @@ app.use(context); //扩充ctx;
 app.use(routes); //路由
 
 
+
+
 app.use(async (ctx, next) => {
   try {
     await next();
