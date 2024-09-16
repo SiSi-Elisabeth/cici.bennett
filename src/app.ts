@@ -8,7 +8,7 @@ import { context } from './extend';
 import { routes } from './route';
 
 dotenv.config();
-
+console.log('process.env',process.env.NODE_ENV)
 
 
 const app = new Koa();

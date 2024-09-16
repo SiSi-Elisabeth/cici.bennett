@@ -11,7 +11,6 @@ router.get('/login/users/:id',async (ctx)=>{
   const path = ctx.request.path;
   const id = path.split('/').pop();
   const header = ctx.request.header.authorization;
-  console.log('header',header)
   const data = {
     code: 200,
     message: 'users get success',
@@ -58,7 +57,7 @@ router.get('/data/merchant/info', async(ctx)=>{
     code: 200,
     data: {
         account: {
-            availableBalance: 0,
+            availableBalance: 100,
             balance: 0,
             frozenBalance: 0
         },
@@ -69,6 +68,117 @@ router.get('/data/merchant/info', async(ctx)=>{
             merchantName: "北京京念科技有限公司",
             registrationTime: "2022-10-09 00:00:00"
         }
+    },
+    "msg": "Success"
+  }
+  ctx.body = data;
+})
+router.get('/goods/query', async(ctx)=>{
+  const data = {
+    "code": 200,
+    "data": {
+        "expirationMonths": ["24","36","48"],
+        "goodsName": "Tokey资源包",
+        "productName": "AI秘书",
+        "specifications": ["100","1000","10000","100000"]
+    },
+    "msg": "Success"
+  }
+  ctx.body = data;
+
+})
+router.get('/order/list', async(ctx)=>{
+  const { pageNum, pageSize } = ctx.query as any;
+  const data = {
+    "code": 200,
+    "data": {
+        "list": [
+            {
+                "Order": {
+                    "orderId": "1017679360884219904",
+                    "userId": "0208fea2910e45498a489bef655be291",
+                    "amount": 10,
+                    "paymentType": 1,
+                    "payStatus": 0
+                },
+                "OrderDetailsList": [
+                    {
+                        "orderId": "1017679360884219904",
+                        "goodsId": 1,
+                        "amount": 10,
+                        "specification": "5000000",
+                        "expirationMonth": 24,
+                        "isValid": false,
+                        "startTime": "2024-09-09 14:14:28",
+                        "endTime": "2026-09-09 14:14:28"
+                    }
+                ]
+            },
+            {
+                "Order": {
+                    "orderId": "1017640327214800896",
+                    "userId": "0208fea2910e45498a489bef655be291",
+                    "amount": 10,
+                    "paymentType": 1,
+                    "payStatus": 0
+                },
+                "OrderDetailsList": [
+                    {
+                        "orderId": "1017640327214800896",
+                        "goodsId": 1,
+                        "amount": 10,
+                        "specification": "5000000",
+                        "expirationMonth": 24,
+                        "isValid": false,
+                        "startTime": "2024-09-09 11:39:27",
+                        "endTime": "2026-09-09 11:39:27"
+                    }
+                ]
+            },
+            {
+              "Order": {
+                  "orderId": "1017679360884219904",
+                  "userId": "0208fea2910e45498a489bef655be291",
+                  "amount": 10,
+                  "paymentType": 1,
+                  "payStatus": 0
+              },
+              "OrderDetailsList": [
+                  {
+                      "orderId": "1017679360884219904",
+                      "goodsId": 1,
+                      "amount": 10,
+                      "specification": "5000000",
+                      "expirationMonth": 24,
+                      "isValid": false,
+                      "startTime": "2024-09-09 14:14:28",
+                      "endTime": "2026-09-09 14:14:28"
+                  }
+              ]
+          },
+          {
+              "Order": {
+                  "orderId": "1017640327214800896",
+                  "userId": "0208fea2910e45498a489bef655be291",
+                  "amount": 10,
+                  "paymentType": 1,
+                  "payStatus": 0
+              },
+              "OrderDetailsList": [
+                  {
+                      "orderId": "1017640327214800896",
+                      "goodsId": 1,
+                      "amount": 10,
+                      "specification": "5000000",
+                      "expirationMonth": 24,
+                      "isValid": false,
+                      "startTime": "2024-09-09 11:39:27",
+                      "endTime": "2026-09-09 11:39:27"
+                  }
+              ]
+          }
+        ],
+        "total": 4
     },
     "msg": "Success"
   }
