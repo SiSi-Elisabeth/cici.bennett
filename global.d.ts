@@ -6,9 +6,9 @@
 //   }
 // }
 
-declare namespace NodeJS {
-  interface ProcessEnv {
-    NODE_ENV: 'development' | 'testing' | 'production';
-    CUSTOM_VAR?: string;  // 你可以添加自定义的环境变量
-  }
-}
+// declare namespace NodeJS {
+//   interface ProcessEnv {
+//     NODE_ENV: 'development' | 'testing' | 'production';
+//     CUSTOM_VAR?: string;  // 你可以添加自定义的环境变量
+//   }
+// }

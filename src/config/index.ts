@@ -1,7 +1,26 @@
-// import defaultConfig from './config.default'
+import defaultConfig from './config.default';
+import devConfig from './config.development';
+import proConfig from './config.production';
+import testConfig from './config.testing';
+import error from './error';
 
-// const config = { ...defaultConfig } 
+type Config  = typeof defaultConfig &
+typeof testConfig &
+typeof proConfig &
+typeof defaultConfig
 
-// export default {
-//   config
-// }
+const config = { ...defaultConfig } as Config;
+
+switch(process.env.NODE_ENV) {
+  case 'testing':
+    Object.assign(config, { ...testConfig })
+  case 'production':
+    Object.assign(config, { ... proConfig })
+  case 'development':
+    Object.assign(config, { ...devConfig })
+}
+
+export {
+  config, error
+};
+

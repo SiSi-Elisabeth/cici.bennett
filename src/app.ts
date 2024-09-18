@@ -1,24 +1,19 @@
-// import cors from '@koa/cors';
 import cors from '@koa/cors';
 import dotenv from 'dotenv';
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
-import { corsOptions } from './config/config.default';
+import { config } from './config';
 import { context } from './extend';
 import { routes } from './route';
 
-dotenv.config();
-console.log('process.env',process.env.NODE_ENV)
-
+dotenv.config()
 
 const app = new Koa();
-
-app.use(cors(corsOptions)); //跨域
+app.use(cors(config.corsOptions)); //跨域
 
 app.use(bodyParser()); //解析body
 app.use(context); //扩充ctx;
 app.use(routes); //路由
-
 
 
 
@@ -40,8 +35,8 @@ app.use(async (ctx, next) => {
 });
 
 // Router.get('')
-app.listen(process.env.PORT,() => {
+app.listen(config.port,() => {
   // console.info('\x1b[31m%s\x1b[0m','server success, port: 3000');
-  console.log(`server success, http://127.0.0.1:${process.env.PORT}`);
+  console.log(`server success, http://127.0.0.1:${config.port}`);
 })
 
