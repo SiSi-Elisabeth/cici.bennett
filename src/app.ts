@@ -4,6 +4,7 @@ import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import { config } from './config';
 import { context } from './extend';
+import './model';
 import { routes } from './route';
 
 dotenv.config()

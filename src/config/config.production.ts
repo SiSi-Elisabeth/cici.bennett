@@ -1,4 +1,6 @@
-const sequelize = {
+import { SequelizeOptions } from "sequelize-typescript"
+
+const sequelize:SequelizeOptions = {
   username: 'root',
   password: '123456',
   database: 'bennett_production',

@@ -13,11 +13,11 @@ const config = { ...defaultConfig } as Config;
 
 switch(process.env.NODE_ENV) {
   case 'testing':
-    Object.assign(config, { ...testConfig })
+    Object.assign(config, testConfig)
   case 'production':
-    Object.assign(config, { ... proConfig })
+    Object.assign(config, proConfig)
   case 'development':
-    Object.assign(config, { ...devConfig })
+    Object.assign(config, devConfig)
 }
 
 export {
