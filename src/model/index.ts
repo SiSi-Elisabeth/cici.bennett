@@ -13,11 +13,3 @@ const sequelize = new Sequelize({
 })
 // sequelize.addModels([Article]);
 sequelize.sync({ alter: true });
-
-// .authenticate()
-  // .then(() => {
-  //   console.log('Connection has been established successfully.');
-  // })
-  // .catch(err => {
-  //   console.error('Unable to connect to the database:', err);
-  // });
