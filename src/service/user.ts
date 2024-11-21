@@ -1,6 +1,6 @@
 class UserService {
   async register (ctx) {
-    ctx.body = '注册成功'
+    ctx.body = {message:'注册成功'}
   }
 
   async login (ctx) {

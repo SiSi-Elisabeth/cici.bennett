@@ -210,5 +210,5 @@ router.delete('/user/:id', async(ctx)=>{
   ctx.body = data;
 })
 
-export const get = router.routes()
+export const get = router.routes();
 

@@ -13,4 +13,4 @@ services:
     ports:
       - '3306:3306'
     volumes:
-      - ./data/mysql:/var/lib/mysql
+      - /Users/zhangmengmeng/Documents/mysql-data/bennett_mysql:/var/lib/mysql
