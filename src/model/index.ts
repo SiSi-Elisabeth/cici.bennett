@@ -12,4 +12,4 @@ const sequelize = new Sequelize({
   models:[Article]
 })
 // sequelize.addModels([Article]);
-sequelize.sync({ alter: true });
+sequelize.sync({ }); // alter: true

@@ -2,13 +2,13 @@ name: bennett
 
 services: 
   mysql:
-    container_name: mysql
+    container_name: bennett_mysql
     image: mysql:8.4.0
     restart: always
     # command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
     environment:
       - MYSQL_ROOT_PASSWORD=123456
-      - MYSQL_DATABASE=bennett_development
+      - MYSQL_DATABASE=bennett_dev
       - MYSQL_LOWER_CASE_TABLE_NAMES=0
     ports:
       - '3306:3306'
